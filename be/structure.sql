@@ -109,7 +109,7 @@ create table services(
     primary key(id),
     foreign key (patient_id) references users(id),
     foreign key (employee_id) references users(id),
-    foreign key (department_id) references department(id)
+    foreign key (department_id) references departments(id)
 );
 
 create table employee_infos(
