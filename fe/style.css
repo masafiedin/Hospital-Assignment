@@ -1,0 +1,32 @@
+.sign_up{
+    border: solid;
+    display: flex;
+    flex-flow:column nowrap;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+}
+
+.sign_up
+input,
+button{
+    margin: 5px;
+}
+
+
+.sign_in{
+    border: solid;
+    display: flex;
+    flex-flow:column nowrap;
+    align-items: center;
+    width: 50%;
+    margin:auto;
+    margin-top: 10%;
+
+}
+
+.sign_in
+input,
+button{
+    margin: 5px;
+}

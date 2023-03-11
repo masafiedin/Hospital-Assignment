@@ -43,17 +43,17 @@ create table medications(
     primary key(id)
 );
 
-create table appointments(
-    id int not null AUTO_INCREMENT,
-    appointment_time datetime,
-    patient_id int,
-    doctor_id int,
-    has_joined boolean,
-    meeting_url varchar(128),
-    primary key(id),
-    foreign key(patient_id) references users(id),
-    foreign key(doctor_id) references users(id)
-);
+-- create table appointments(
+--     id int not null AUTO_INCREMENT,
+--     appointment_time datetime,
+--     patient_id int,
+--     doctor_id int,
+--     has_joined boolean,
+--     meeting_url varchar(128),
+--     primary key(id),
+--     foreign key(patient_id) references users(id),
+--     foreign key(doctor_id) references users(id)
+-- );
 
 create table patient_infos(
     id int not null AUTO_INCREMENT,
@@ -167,15 +167,3 @@ create table usesr_rooms(
     foreign key (user_id) references users(id),
     foreign key (room_id) references rooms(id)
 );
-
-
-
-insert into user_types 
-values
-	(1,"admin"),
-    (2,"employee"),
-    (3,"patient");
-    
- insert into blood_types
- VALUES
-(1, 'A+'), (2, 'A-'), (3, 'B+'), (4, 'B-'), (5, 'AB+'), (6, 'AB-'), (7, 'O+'), (8, 'O-');
