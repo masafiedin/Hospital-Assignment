@@ -1,6 +1,6 @@
 let signup_btn = document.getElementById('signup');
 let signin_btn = document.getElementById('signin')
-signup_btn.addEventListener('click', signup);
+signup_btn.addEventListener('click', submitForm);
 signin_btn.addEventListener('click', signin);
 
 function signup() {
@@ -21,7 +21,7 @@ function signup() {
     
     axios({
         "method": "post",
-        "url": "http://localhost/foodex_backend/signup.php",
+        "url": "http://localhost/hospitalAssignment/be/signup.php",
         "data": data
     }).then((result) => {
         console.log(result)
@@ -32,12 +32,7 @@ function signup() {
         console.error(err)
     });
 
-    // axios.post("http://localhost/foodex_backend/signup.php",data).then(function(res){
-    //     console.log(res)
-    // }).catch(function(err){
-    //     console.error(err)
-    // })
-}
+
 
 function signin() {
     let username = document.getElementById('username_signin').value;
@@ -45,7 +40,7 @@ function signin() {
     let data = new FormData();
     data.append('username', username);
     data.append('password', password);
-    axios.post('http://localhost/Hospital Assignment/be/login.php', data).then(function (res) {
+    axios.post('http://localhost/HospitalAssignment/be/login.php', data).then(function (res) {
         console.log(res.data)
         // window.localStorage.setItem('user_id', res.data.user_id)
         // window.sessionStorage.setItem('user_id', res.data.user_id)
@@ -62,6 +57,9 @@ function submitForm() {
     validateForm();
     if (formCheckPassed != 1) {
       return false;
+    }else{
+      signup();
+
     }
   }
   
@@ -98,3 +96,5 @@ function submitForm() {
 
     formCheckPassed = 1;
   }
+
+}

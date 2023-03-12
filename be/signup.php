@@ -5,7 +5,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $name = $_POST['name'];
 $dob = $_POST['dob'];
-$type = $_POST['dob'];
+$type = $_POST['type'];
 
 $check_email = $mysqli->prepare('select email from users where email=?');
 $check_email->bind_param('s', $email);
@@ -15,11 +15,12 @@ $email_exists = $check_email->num_rows();
 
 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
+
 if ($email_exists > 0) {
     $response['status'] = "failed";
 } else {
     $query = $mysqli->prepare('insert into users(email,password,name,dob,type) values(?,?,?,?,?)');
-    $query->bind_param('sssss', $email, $hashed_password, $name, $dob,$type);
+    $query->bind_param('sssss', $email, $hashed_password, $name, $dob, $type);
     $query->execute();
     $response['status'] = "success";
 }

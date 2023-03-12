@@ -27,6 +27,9 @@ VALUES ('John Doe', 'johndoe@example.com', 'password123', '1990-01-01', 3),
        ('Dr. Emily', 'dremily@example.com', 'doctorpass', '1976-01-11', 2),
        ('Dr. Ahmad', 'drahmad@example.com', 'doctorpass', '1990-06-25', 2);
 
+
+
+
 -- Dummy data for hospitals table
 INSERT INTO hospitals (name, email, phone, address, website)
 VALUES ('General Hospital', 'info@generalhospital.com', '123-456-7890', '123 Main St, Anytown USA', 'http://www.generalhospital.com'),
